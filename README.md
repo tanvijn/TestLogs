@@ -13,24 +13,24 @@ Follow the steps to get logs by mail into your app :
 Find AppDelegate.swift in your project. Define following var and function before any import statement as global.
 public var logFilePath:String!
  
-func print(_ items: Any..., separator: String = " ", terminator: String = "\n") {
+    func print(_ items: Any..., separator: String = " ", terminator: String = "\n") {
     let output = items.map { "*\($0)"}.joined(separator: " ")
     //Swift.print(output, terminator: terminator)
     NSLog(output)
-}
+    }
  
 Above function override any logs in the app.
 Then define following method in AppDelegate.Swift file. And call from   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool function.
 
-func printTheDataAtLogFile() {
+    func printTheDataAtLogFile() {
     logFilePath = NSTemporaryDirectory().appending(String.init(format: "%@.log",Bundle.main.object(forInfoDictionaryKey: "CFBundleName") as! String)) as String
        freopen((logFilePath as NSString).cString(using: String.Encoding(rawValue: String.Encoding.ascii.rawValue).rawValue)!, "a+", stderr)
-   }
+    }
 Above function will write all logs in a file.
 Then open Viewcontroller.swift. Define below 2 functions in it. 
 
 
- func allOptions() {
+      func allOptions() {
         let alert = UIAlertController(title: "Please Select an Option", message: nil, preferredStyle: .actionSheet)
         
         alert.addAction(UIAlertAction(title: "Log Mail", style: .default , handler:{ (UIAlertAction)in
