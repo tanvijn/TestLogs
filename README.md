@@ -20,6 +20,7 @@ public var logFilePath:String!
     }
  
 Above function override any logs in the app.
+
 Then define following method in AppDelegate.Swift file. And call from   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool function.
 
     func printTheDataAtLogFile() {
@@ -27,6 +28,7 @@ Then define following method in AppDelegate.Swift file. And call from   func app
        freopen((logFilePath as NSString).cString(using: String.Encoding(rawValue: String.Encoding.ascii.rawValue).rawValue)!, "a+", stderr)
     }
 Above function will write all logs in a file.
+
 Then open Viewcontroller.swift. Define below 2 functions in it. 
 
 
