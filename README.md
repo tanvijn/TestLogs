@@ -67,4 +67,4 @@ Call allOptions() from IBAction pressForLogs. Above functions will open Activity
 
 Voila!
 
-For more information visit our [documentation](https://www.google.com)
+For more information visit our [documentation](https://dev-lr-engineering.netlify.app/blog/how-to-obtain-ios-application-logs-without-mac/)
